@@ -47,6 +47,13 @@ puntoG = False
 punto_player1 = 0
 punto_player2 = 0
 
+# sonido
+
+sound = pygame.mixer.Sound("C:/Users/fnunez/Desktop/Portfolio/Pong/sonidos/golpe.mp3")
+soundWin = pygame.mixer.Sound("C:/Users/fnunez/Desktop/Portfolio/Pong/sonidos/win1.mp3")
+
+
+
 
 # texto puntos
 game_over = False
@@ -83,6 +90,8 @@ while not game_over:
     # zona de logica
     if pelota_y > 590 or pelota_y < 10:
         pelota_speed_y *= -1
+        sound.play()
+
 
     # revisa si la pelota sale del lado derecho
     if pelota_x > 800:
@@ -93,6 +102,7 @@ while not game_over:
         pelota_speed_y = 2.8
         pelota_speed_x *= -1
         punto_player1 += 1
+        
 
         # revisa si la pelota sale del lado izquierdo
     if pelota_x < 0:
@@ -125,6 +135,7 @@ while not game_over:
     # colisiones
     if pelota.colliderect(jugador1) or pelota.colliderect(jugador2):
         pelota_speed_x *= -1.1
+        sound.play()
 
     # marcador de puntos
     miFuente = pygame.font.Font(None, 28)
@@ -141,8 +152,9 @@ while not game_over:
         screen.blit(textoG, (335, 25))
         punto_player1 = 0
         punto_player2 = 0
+        soundWin.play()
         pygame.display.flip()
-        time.sleep(4)
+        time.sleep(3.5)
 
     if (punto_player2) == 3:
         textoGanador = pygame.font.Font(None, 23)
@@ -150,8 +162,9 @@ while not game_over:
         screen.blit(textoG, (335, 25))
         punto_player1 = 0
         punto_player2 = 0
+        soundWin.play()
         pygame.display.flip()
-        time.sleep(4)
+        time.sleep(3.5)
 
     screen.blit(miTexto, (380, 20))
     screen.blit(velPelFuente, (380, 580))
