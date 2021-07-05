@@ -49,8 +49,8 @@ punto_player2 = 0
 
 # sonido
 
-sound = pygame.mixer.Sound("C:/Users/fnunez/Desktop/Portfolio/Pong/sonidos/golpe.mp3")
-soundWin = pygame.mixer.Sound("C:/Users/fnunez/Desktop/Portfolio/Pong/sonidos/win1.mp3")
+sound = pygame.mixer.Sound("C:/Users/fnunez/Desktop/repo/Pong/sonidos/golpe.mp3")
+soundWin = pygame.mixer.Sound("C:/Users/fnunez/Desktop/repo/Pong/sonidos/win1.mp3")
 
 
 
